@@ -13,7 +13,7 @@ This project is my personal project for exploring deeper in the field of deep le
 Not avaliable for contributing. This is only a personal project. However, error reporting is much welcomed.
 ## Versioning
 
-For the versions available, see the [tags on this repository](https://github.com/clemen/FaceDetction/tags). 
+For the versions available, see the [tags on this repository](https://github.com/Clement-Hui/FaceDetction/tags). 
 
 ## Authors
 
