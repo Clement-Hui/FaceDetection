@@ -1,6 +1,6 @@
 import os
 
-from PIL import Image
+from skimage import io
 from torch.utils.data import Dataset
 
 
@@ -62,10 +62,14 @@ class WIDERFaceDataset(Dataset):
 
     def __getitem__(self, idx):
         # load image from path
-        img = Image.open(self.path[idx])
+        img = io.imread(self.path[idx])
+
+        arr = self.labels[idx]
+        bbox = arr[:3]
+        features = arr[4:]
+        out = {'image': img, 'bbox': bbox, 'features': features}
         # transform image
         if self.transform is not None:
-            img = self.transform(img)
-
-        # return tuple of image and label
-        return (img, self.labels[idx])
+            out = self.transform(out)
+        # return dict of image and label
+        return out

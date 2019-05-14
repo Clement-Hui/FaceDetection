@@ -1,2 +1,3 @@
-from utils.bbox import *
+from utils import *
+from utils.bbox_utils import *
 from utils.dataset import *
